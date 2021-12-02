@@ -1,10 +1,40 @@
+import 'dart:math';
+
 void main() {
-  print(printHello());
-  print(sum());
+  var printName=printHello();
+  print('Method No.1 is Printing: $printName');
+  var sumResult=sum();
+  print('Method No.2 is Printing: $sumResult');
+  var variableStore = myVariableStore();
+  print('Method No.3 is Return: $variableStore');
   var result=productCalculation(54, 48);
-  print(result);
+  print('Method No.4 is Printing: $result');
   var myCalculator = dynamicCalculator(12, 10);
-  print(myCalculator);
+  print('Method No.5 is Printing: $myCalculator');
+  var area = areaPerimeterCalculation();
+  print('Method No.6 is Printing: $area');
+  var division=reusableMethod(40, 12);
+  print('Method No.7 is Printing: $division');
+  var studentList=listMethod('Habib',1255830, 'abc@gmail.com', 01308166502);
+  print('Method No.8 is Printing: $studentList');
+  var mathematics = method10();
+  print('Method No.10 is Printing: $mathematics');
+
+//Problem No.9
+  var value1=83;
+  var value2=11;
+
+  myNewMethod(){
+    var multiplication = value1*value2;
+    return multiplication;
+  }
+
+  myNewMethod2(){
+    var result=myNewMethod();
+    return result;
+  }
+  var multiplication=myNewMethod2();
+  print('Method No.9 is Printing: $multiplication');
 }
 
 //Problem No.1
@@ -22,7 +52,7 @@ int sum(){
 }
 
 //Problem No.3
-void myVariableStore(){
+myVariableStore(){
   int number = 12;
   String numberAsString = '12';
   String name = 'Your name';
@@ -44,6 +74,38 @@ Map <dynamic, dynamic> dynamicCalculator(dynamic a, dynamic b){
     var multiply = a*b;
     var subtract = a-b;
     var divide = a/b;
-    var result = {'Addition':addition, 'Multiply':multiply, 'Subtract':subtract, 'divide':divide};
+    var remainder= a%b;
+    var result = {'Addition':addition, 'Multiply':multiply, 'Subtract':subtract, 'divide':divide, 'Remainder':remainder};
     return result;
+}
+
+//Problem No.6
+ areaPerimeterCalculation(){
+  double radius = 5;
+  double area = pi*radius*radius;
+  double perimeter = 2*pi*radius;
+  return ['Area is: $area','Perimeter is: $perimeter'];
+}
+
+//Problem No.7
+double reusableMethod(double a, double b){
+  var division=a/b;
+  return division;
+}
+
+//Problem No.8 >>> Write a method to display your id, your name, your email, your phone number in single line.
+List <dynamic> listMethod(String name, int id, String email, int phone){
+  List studentList= [name,id,email,phone];
+  return studentList;
+}
+
+// Problem No.9 >>> Please see inside the main method
+
+//Problem No.10
+List <dynamic> method10(){
+  dynamic a = -5 + 8 * 6;
+  dynamic b= (55+9) % 9;
+  dynamic c = 20 + -3*5/8;
+  dynamic d = 5 + 15 / 3 * 2 - 8 % 3;
+  return [a,b,c,d];
 }
